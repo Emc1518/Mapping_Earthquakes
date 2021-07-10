@@ -13,8 +13,8 @@ let map = L.map('mapid').setView([30, 30], 2);
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
 
-// Accessing the airport GeoJSON URL 
-let airportData = "https://raw.githubusercontent.com/Emc1518/Mapping_Earthquakes/main/majorAirports.json";
+// Accessing the Toronto airline routes GeoJSON URL 
+let torontoData = "https://raw.githubusercontent.com/Emc1518/Mapping_Earthquakes/main/torontoRoutes.json";
 
 // Grabbing our GeoJSON data.
 d3.json(airportData).then(function(data) {
@@ -23,22 +23,4 @@ d3.json(airportData).then(function(data) {
 L.geoJson(data).addTo(map);
 });
 
-// Add GeoJSON data.
-let sanFranAirport =
-{"type":"FeatureCollection","features":[{
-    "type":"Feature",
-    "properties":{
-        "id":"3469",
-        "name":"San Francisco International Airport",
-        "city":"San Francisco",
-        "country":"United States",
-        "faa":"SFO",
-        "icao":"KSFO",
-        "alt":"13",
-        "tz-offset":"-8",
-        "dst":"A",
-        "tz":"America/Los_Angeles"},
-        "geometry":{
-            "type":"Point",
-            "coordinates":[-122.375,37.61899948120117]}}
-]};
+
